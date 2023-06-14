@@ -8,28 +8,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="input">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title">
-    </div>
-    <div class="input">
-        <label for="author">Author</label>
-        <input type="text" name="author" id="author">
-    </div>
-    <div class="input">
-        <label for="Pages">Pages</label>
-        <input type="text" name="Pages" id="Pages">
-    </div>
-    <div class="input">
-        <div class="read">Have you read it?</div>
-        
-        <label for="yes">Yes</label>
-        <input type="radio" name="read" id="yes">
 
-        <label for="no">No</label>
-        <input type="radio" name="read" id="no">
+    <header><h1>Online library</h1></header>
 
-    </div>
-    <script src="test.js"></script>
+    <main>
+        <button id="add-btn">Add new book</button>
+    <!--the form is hide right now it will show until someone add a new book-->
+    <form action="" method="post" style="display: none;">
+        <div class="input">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+        </div>
+        <div class="input">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author">
+        </div>
+        <div class="input">
+            <label for="Pages">Pages</label>
+            <input type="text" name="Pages" id="Pages">
+        </div>
+        <div class="input">
+            <div class="read">Have you read it?</div>
+            
+            <label for="yes">Yes</label>
+            <input type="radio" name="read" id="yes">
+    
+            <label for="no">No</label>
+            <input type="radio" name="read" id="no">
+    
+        </div>
+    </form>
+
+    <div class="container"></div>
+    </main>
+
+    <footer>Made by Alejandro Lizarraga in conjunction width the odin project</footer>
+
+    <script src="java.js"></script>
 </body>
 </html>
