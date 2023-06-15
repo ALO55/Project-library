@@ -31,6 +31,7 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 #add-btn {
@@ -42,15 +43,46 @@ main {
     color: white;
     cursor: pointer;
     font-size: 2rem;
-    align-self: center;
 }
 
 #add-btn:hover {
     background: rgb(97, 158, 250);
 }
 
+form {
+    background-color: white;
+    font-size: 2rem;
+    padding: 10px;
+}
+
 .container {
     flex: 1;
+}
+
+input {
+    font-size: 1.5rem;
+}
+
+.input {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.form-btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 40px;
+    gap: 5px;
+}
+
+#save-btn {
+    background-color: green;
+    font-size: 1.5rem;
+}
+
+#cancel-btn {
+    background-color: red;
+    font-size: 1.5rem;
 }
 
 footer {
