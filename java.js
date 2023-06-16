@@ -27,6 +27,23 @@ function showBook (){
       card.appendChild(infoBook);
     }
 
+    //button to change read status
+    let changeRead = document.createElement('button');
+    changeRead.innerHTML = 'Change read status';
+    changeRead.classList.add('read.btn');
+    card.appendChild(changeRead);
+    changeRead.addEventListener('click', () =>{
+      toggleRead(`${i}`)
+    })
+
+    //button to eliminate the book 
+    let removeBtn = document.createElement('button');
+    removeBtn.innerHTML = 'Remove';
+    removeBtn.classList.add('remove-btn');
+    card.appendChild(removeBtn);
+    removeBtn.addEventListener('click', () =>{
+      removeBook(`${i}`);
+    })
   }
 } 
 
@@ -57,3 +74,19 @@ document.querySelector('form').addEventListener('submit', (event) => {
   addBookToLibrary();
 })
 
+
+function removeBook(index){
+  myLibrary.splice(index, 1);
+  showBook();
+}
+
+//switch read status
+Book.prototype.toggleRead = function (){
+  this.read = !this.read;  
+  this.read = this.read ? 'Read it' : 'Not read it';
+}
+
+function toggleRead (index){
+  myLibrary[index].toggleRead();
+  showBook();
+}

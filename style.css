@@ -79,6 +79,10 @@ input {
     gap: 5px;
 }
 
+.card {
+    background-color: white;
+}
+
 #save-btn {
     background-color: green;
     font-size: 1.5rem;
@@ -99,4 +103,5 @@ footer {
     text-align: center;
     background-color:rgba(5, 5, 5, 0.5);
 }
+
 
