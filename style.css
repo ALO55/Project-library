@@ -57,9 +57,9 @@ form {
 
 .container {
     margin: 15px;
-    border: 1px solid red;
     padding: 10px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
@@ -80,7 +80,8 @@ input {
 }
 
 .card {
-    background-color: white;
+    background-color:rgb(207, 112, 34);
+    padding: 5px;
 }
 
 #save-btn {
@@ -94,8 +95,26 @@ input {
 }
 
 .books {
-    background-color: white;
-    border: 1px solid blue;
+    font-size: 1.5rem;
+}
+
+.read-btn {
+    font-size: 1.2rem;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.read-btn:hover {
+    background-color: green;
+}
+
+.remove-btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: red;
 }
 
 footer {

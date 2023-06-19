@@ -1,7 +1,8 @@
 let myLibrary = [];
 let addBook = document.querySelector('#add-btn');
 const container = document.querySelector('.container');
-
+let bookForm = document.querySelector('form');
+let cancelBtn = document.querySelector('#cancel-btn');
 
 // create a new book
 function Book (title, author, pages, read){
@@ -30,7 +31,7 @@ function showBook (){
     //button to change read status
     let changeRead = document.createElement('button');
     changeRead.innerHTML = 'Change read status';
-    changeRead.classList.add('read.btn');
+    changeRead.classList.add('read-btn');
     card.appendChild(changeRead);
     changeRead.addEventListener('click', () =>{
       toggleRead(`${i}`)
@@ -64,7 +65,6 @@ function addBookToLibrary() {
 
 //make the form visible in the page
 addBook.addEventListener('click', () => {
-  let bookForm = document.querySelector('form');
   bookForm.style.display = "block";
 })
 
@@ -72,8 +72,13 @@ addBook.addEventListener('click', () => {
 document.querySelector('form').addEventListener('submit', (event) => {
   event.preventDefault();
   addBookToLibrary();
+  bookForm.style.display = "none";
 })
 
+//cancel to submit the information
+cancelBtn.addEventListener('click', () =>{
+  bookForm.style.display = "none";
+})
 
 function removeBook(index){
   myLibrary.splice(index, 1);
@@ -82,7 +87,13 @@ function removeBook(index){
 
 //switch read status
 Book.prototype.toggleRead = function (){
-  this.read = !this.read;  
+  if(this.read === 'Read it'){
+    this.read = true;
+  } else {
+    this.read = false;
+  } 
+
+  this.read = !this.read;
   this.read = this.read ? 'Read it' : 'Not read it';
 }
 
